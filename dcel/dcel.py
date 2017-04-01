@@ -11,7 +11,7 @@ class DcelError(Exception): pass
 
 class Vertex:
     """Minimal implementation of a vertex of a 2D dcel"""
-    
+
     def __init__(self, px, py):
         self.x = px
         self.y = py
@@ -64,7 +64,7 @@ class Face:
             p += h.length
             h = h.nexthedge
         return p
-    
+
     def vertexlist(self):
         h = self.wedge
         pl = [h.origin]
@@ -166,12 +166,12 @@ class Dcel(Xygraph):
 
 
     def findpoints(self, pl, onetoone=False):
-        """Given a list of points pl, returns a list of 
+        """Given a list of points pl, returns a list of
         with the corresponding face each point belongs to and
         None if it is outside the map.
-        
+
         """
-        
+
         ans = []
         if onetoone:
             fl = self.faces[:]
@@ -249,7 +249,7 @@ def checkhedges(hl):
 def area2(hedge, point):
     """Determines the area of the triangle formed by a hedge and
     an external point"""
-    
+
     pa = hedge.twin.origin
     pb=hedge.origin
     pc=point

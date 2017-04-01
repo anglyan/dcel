@@ -15,20 +15,20 @@ def commentchar():
 
 def addcommentchar(c):
     """appends a char to the list of chars that signal comment lines"""
-   
+
     if not c in _commentchars:
         _commentchars.append(c[0])
 
 def setcommentchar(lc):
     """passes a list of comment markers"""
-    
+
     _commentchars = lc
 
 def tokenize(line):
     """determines the tokens inside a line (space or tab
     separated) and returns their numerical values or, if that
     fails, the token as a string"""
-    
+
     lw = []
     if len(line) == 0 or line[0] in _commentchars:
         return lw
@@ -38,7 +38,7 @@ def tokenize(line):
                 val = float(word)
             except:
                 val = word
-            
+
             lw.append(val)
         return lw
 
@@ -60,7 +60,7 @@ def filetosheet(filename):
 
 def extractcolumn(sheet, coln):
     """gets column from sheet"""
-    
+
     col = []
     for row in sheet:
         try:
@@ -71,13 +71,13 @@ def extractcolumn(sheet, coln):
     return col
 
 def operate(col1, col2, func):
-    """Just another name for map(f,l1,l2)"""  
-    
+    """Just another name for map(f,l1,l2)"""
+
     return map(func, col1, col2)
 
 def transform(col, func):
     """Just another name for map(f,l)"""
-    
+
     return map(func, col)
 
 

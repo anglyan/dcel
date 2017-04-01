@@ -52,7 +52,7 @@ class Xygraph:
             else:
                 vlt.append(self.vl[i])
         elt = filter((lambda x:(x[0] not in ind) and (x[1] not in ind)),
-            self.el) 
+            self.el)
         li = filter((lambda x: x not in ind),range(len(self.vl)))
         #We rename the indices in the trimmed edge list
         lf = range(len(self.vl) - len(ind))
@@ -71,7 +71,7 @@ class Xygraph:
             else:
                 y = elt[i][1]
             elt[i] = (x,y)
-        
+
         self.vl = vlt
         self.el = elt
         self.minmax()
